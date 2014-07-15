@@ -4,7 +4,7 @@
   "description": "Ractive input component that fires a changed event after an adjustable delay.",
   "version": "0.0.1",
   "dependencies": {
-    "ractivejs/ractive": "dev"
+    "ractivejs/ractive": ">= 0.4.0"
   },
   "scripts": ["index.js"],
   "styles": ["index.css"],
