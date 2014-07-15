@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ractive-delayed-input Example</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/javascript" src="build/build.js"></script>
+    <script type="text/javascript">
+      var Input = require('ractive-delayed-input');
+
+      var ractive = new Ractive({
+        el: 'container', template: '<DelayedInput />', components: { 'DelayedInput': Input }
+      });
+      ractive.findComponent('DelayedInput').on('changed', function(v) { alert(v); });
+    </script>
+  </body>
+</html>
