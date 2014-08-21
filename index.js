@@ -3,7 +3,7 @@ var Ractive = require('ractive');
 var DelayedInput = Ractive.extend({
   template: '{{>element}}',
   beforeInit: function(opts) {
-    var template = '<input value="{{.value}}" on-keydown="timeout-update"| />';
+    var template = '<input value="{{.text}}" on-keydown="timeout-update"| />';
     var copy = ['placeholder', 'class', 'id', 'style'];
     var out = '';
     for (var k in opts.data) if (k.indexOf('on-') === 0 || copy.indexOf(k) > -1) out += k + '="' + opts.data[k] + '"';
@@ -22,14 +22,14 @@ var DelayedInput = Ractive.extend({
         clearTimeout(me.timer);
         me.timer = null;
       }
-      if (e.node.value !== me.get('value')) {
-        me.timer = setTimeout(function() {
-          me.fire('changed', e.node.value, e);
-        }, me.get('timeout'));
-      }
+      me.timer = setTimeout(function() {
+        me.fire('changed', e.node.value, e);
+      }, me.get('timeout'));
+      me.fire('charKey', e);
     });
   },
   data: {
+    text: '',
     timeout: 500
   },
   partials: { element: '' }

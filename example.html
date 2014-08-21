@@ -13,7 +13,7 @@
       var ractive = new Ractive({
         el: 'container', template: '<DelayedInput />', components: { 'DelayedInput': Input }
       });
-      ractive.findComponent('DelayedInput').on('changed', function(v) { alert(v); });
+      ractive.findComponent('DelayedInput').on('changed', function(v) { console.log(v); });
     </script>
   </body>
 </html>
