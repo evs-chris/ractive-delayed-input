@@ -2,7 +2,7 @@
   "name": "ractive-delayed-input",
   "repository": "evs-chris/ractive-delayed-input",
   "description": "Ractive input component that fires a changed event after an adjustable delay.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
     "ractivejs/ractive": "*"
   },
